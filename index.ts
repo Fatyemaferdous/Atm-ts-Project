@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import inquirer from "inquirer";
 
 let balance = 500000;
@@ -49,7 +51,8 @@ if (userPin.pin === myPin) {
     if (amountOptions.selectedAmount > balance) {
       console.log("Insufficient balance");
     } else if (amountOptions.selectedAmount === "full amount") {
-      console.log("your remaining balance is 0");
+      console.log(`your previous balance was ${balance}`);
+      console.log("and your remaining balance is 0");
     } else {
       balance -= amountOptions.selectedAmount;
       console.log(`your remaining balance is ${balance}`);
